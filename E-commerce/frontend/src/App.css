@@ -1,0 +1,234 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color:black;
+  color: white;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ffd700;
+}
+
+.product-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product-item {
+  background: white;
+  color:black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px; /* keep fixed width for consistency */
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  height: auto; /* allow container to adjust to image height */
+  overflow: visible; /* prevent clipping */
+}
+
+.product-item:hover {
+  transform: scale(1.05);
+}
+
+.product-item img {
+  width: 100%;
+  height: auto; /* preserve aspect ratio */
+  object-fit: contain; /* ensure entire image is visible */
+  max-height: 200px; /* optional: limit max height to prevent oversized images */
+  border-radius: 10px; /* keep rounded corners */
+  display: block; /* remove extra spacing below image */
+}
+
+.product-item h3 {
+  margin: 10px 0;
+}
+
+.product-item p {
+  font-size: 18px;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.product-item button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.product-item button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-item {
+    width: 80%; /* more flexible width on smaller screens */
+    max-width: 300px; /* prevent overly wide items */
+  }
+
+  .product-item img {
+    max-height: 150px; /* adjust for smaller screens */
+  }
+}
+
+.cart-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #555;
+  background: #444;
+  color: white;
+  border-radius: 5px;
+}
+
+.customer-details {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.customer-details label {
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.customer-details input,
+.customer-details select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.customer-details textarea {
+  height: 80px;
+  resize: none;
+}
+
+button {
+  padding: 9px 15px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.contact {
+  text-align: center;
+  padding: 50px 20px;
+  background: black;
+}
+
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cart-modal {
+    width: 90%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
